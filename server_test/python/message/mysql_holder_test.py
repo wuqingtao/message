@@ -49,7 +49,7 @@ class MysqlHolderTest(unittest.TestCase):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--user', type=str, help='Mysql username')
+    parser.add_argument('--user', type=str, help='Mysql user')
     parser.add_argument('--password', type=str, help='Mysql password')
     args = parser.parse_args()
     _user = args.user

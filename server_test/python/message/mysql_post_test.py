@@ -207,7 +207,7 @@ class MysqlPostTest(unittest.TestCase):
 if __name__ == '__main__':
     # 出于安全考虑，数据用户名和密码不应该明文，考虑通过命令函参数输入
     parser = ArgumentParser()
-    parser.add_argument('--user', type=str, help='Mysql username')
+    parser.add_argument('--user', type=str, help='Mysql user')
     parser.add_argument('--password', type=str, help='Mysql password')
     args = parser.parse_args()
     _user = args.user

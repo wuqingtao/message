@@ -6,8 +6,14 @@ var assert = require('assert');
 var mysql_holder = require('../../../server/node/message/mysql_holder.js');
 var mysql_post = require('../../../server/node/message/mysql_post.js');
 
-var user = 'root';
-var password = 'Ningning~1';
+var commander = require('commander');
+commander
+    .option('-u --user [value]', 'Mysql user')
+    .option('-u --password [value]', 'Mysql password')
+    .parse(process.argv);
+var user = commander.user;
+var password = commander.password;
+
 var database = 'test_message';
 
 describe('MysqlPostTest()', function() {

@@ -21,8 +21,6 @@ class Message:
             return self.__post.get_all()
         elif type == 'get_post_by_id':
             return self.__post.get_by_id(data)
-        elif type == 'get_post_by_ids':
-            return self.__post.get_by_ids(data)
         elif type == 'add_post':
             return self.__post.add(data)
         elif type == 'modify_post':
