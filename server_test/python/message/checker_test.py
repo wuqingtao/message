@@ -26,14 +26,6 @@ class CheckerTest(unittest.TestCase):
         self.assertEqual(check_param_id({'id':'1234'}), (None, {'status':'invalid_parameter', 'message':'"id" should be int.'}))
         self.assertEqual(check_param_id({'id':1234}), (1234, None))
 
-    def test_check_param_ids(self):
-        self.assertEqual(check_param_ids({}), (None, {'status':'lost_parameter', 'message':'"ids" is necessary.'}))
-        self.assertEqual(check_param_ids({'abcd':1234}), (None, {'status':'lost_parameter', 'message':'"ids" is necessary.'}))
-        self.assertEqual(check_param_ids({'Ids':1234}), (None, {'status':'lost_parameter', 'message':'"ids" is necessary.'}))
-        self.assertEqual(check_param_ids({'ids':'1234'}), (None, {'status':'invalid_parameter', 'message':'"ids" should be list and not empty.'}))
-        self.assertEqual(check_param_ids({'ids':[]}), (None, {'status':'invalid_parameter', 'message':'"ids" should be list and not empty.'}))
-        self.assertEqual(check_param_ids({'ids':[1234, '1234']}), (None, {'status':'invalid_parameter', 'message':'"id" should be int.'}))
-
     def test_check_param_content(self):
         self.assertEqual(check_param_content({}), (None, {'status':'lost_parameter', 'message':'"content" is necessary.'}))
         self.assertEqual(check_param_content({'abcd':'1234'}), (None, {'status':'lost_parameter', 'message':'"content" is necessary.'}))

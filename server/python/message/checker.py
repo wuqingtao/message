@@ -20,17 +20,6 @@ def check_param_id(data):
         return (None, {'status':'invalid_parameter', 'message':'"id" should be int.'})
     return (id, None)
 
-def check_param_ids(data):
-    if not data.has_key('ids'):
-        return (None, {'status':'lost_parameter', 'message':'"ids" is necessary.'})
-    ids = data['ids']
-    if not isinstance(ids, list) or not ids:
-        return (None, {'status':'invalid_parameter', 'message':'"ids" should be list and not empty.'})
-    for id in ids:
-        if not isinstance(id, int):
-            return (None, {'status':'invalid_parameter', 'message':'"id" should be int.'})
-    return (ids, None)
-
 def check_param_content(data):
     if not data.has_key('content'):
         return (None, {'status':'lost_parameter', 'message':'"content" is necessary.'})

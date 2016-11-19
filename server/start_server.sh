@@ -21,6 +21,6 @@ if [ "$user" == "" ] || [ "$password" == "" ]; then
 fi
 
 #python server
-target=`dirname $0`/$server/message/wsgi_server.py
+target=`dirname $0`/$server/message/wsgi_server.js
 chmod +x $target
 spawn-fcgi -a 127.0.0.1 -p 8401 -F 1 -- $target --user=$user --password=$password
