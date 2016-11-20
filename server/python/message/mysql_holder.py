@@ -6,12 +6,9 @@ This module defines the Mysql Holder.
 It must implement the interface methods of the Holder.
 '''
 
-import os, sys
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
-from holder import Holder
 import mysql.connector
 
-class MysqlHolder(Holder):
+class MysqlHolder:
     '''
     A MysqlHolder implements the interface methods of the Holder.
     '''

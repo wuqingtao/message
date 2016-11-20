@@ -8,13 +8,12 @@ It must implement the interface methods of the Post.
 
 import os, sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
-from post import Post
+import checker
 import mysql.connector
 import time
 from datetime import datetime
-import checker
 
-class MysqlPost(Post):
+class MysqlPost:
     '''
     MysqlPost is the Mysql implement of Post.
     '''
